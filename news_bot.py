@@ -94,7 +94,7 @@ def get_article_content(url, entry=None):
             # 1차: Newspaper4k
             try:
                 # [수정] 공식 문서에 따라 input_html을 인자로 전달하여 다운로드 생략 및 자동 파싱
-                article = newspaper.article(url, language='ko', input_html=response.text)
+                article = newspaper.article(url, input_html=response.text)
                 text = article.text.strip()
                 print(f"      👉 [1차 파싱(Newspaper4k)] 본문 길이: {len(text)}자")
             except Exception as e:
